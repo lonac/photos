@@ -28,3 +28,7 @@ Route::post('schools/create','SchoolController@store');
 Route::get('schools/{id}','SchoolController@show');
 Route::get('schools/{id}/edit','SchoolController@edit');
 Route::patch('schools/{id}/edit','SchoolController@update');
+
+
+//excell
+Route::get('schools/{id}/excell/create','ExcellController@create');

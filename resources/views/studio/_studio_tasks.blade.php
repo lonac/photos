@@ -3,6 +3,7 @@
 		<div class="col-md-3">
 			<div class="panel-heading">
 				<a href="" class="btn btn-default btn-lg btn-block">UPLOAD EXCELL</a>
+				<input type="file" id="inputfile" name="excell">
 			</div>
 		</div>
 		<div class="col-md-3">

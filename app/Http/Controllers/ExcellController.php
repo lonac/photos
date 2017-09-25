@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\School;
+
+use App\Excell;
+
 class ExcellController extends Controller
 {
     /**
@@ -21,9 +25,11 @@ class ExcellController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $school = School::findOrFail($id);
+
+        return view('excell.create',compact('school'));
     }
 
     /**

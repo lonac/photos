@@ -12,9 +12,7 @@
 	<tbody>
 		<tr>
 			<td>{{$school->center_number}}</td>
-			<td>0001</td>
-			<td>M</td>
-			<td>Stanley F. Swai</td>
+			<td></td><td></td><td></td>
 			<td>
 				<img src="{{asset('img/9.jpg')}}" width="20" height="15">
 			</td>
