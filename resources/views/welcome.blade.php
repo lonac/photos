@@ -3,6 +3,23 @@
 
 @section('content')
 <div class="container">
-    welcome
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-primary">
+                <div class="panel-heading"><center><h2>Photo Magic Studio</h2></center></div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="key">Key</label>
+                            <input type="text" class="form-control" placeholder="XS67563873UYB">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-lg btn-block">PROCEED</button>
+                        </div>
+                    </form>
+                 </div>            
+            </div>
+        </div>
+    </div>    
 </div>
 @endsection
