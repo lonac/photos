@@ -20,3 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('studio','PhotoStudioController@create');
+
+//schools
+Route::get('schools','SchoolController@index');
+Route::get('schools/create','SchoolController@create');
+Route::post('schools/create','SchoolController@store');
+Route::get('schools/{id}','SchoolController@show');
+Route::get('schools/{id}/edit','SchoolController@edit');
+Route::patch('schools/{id}/edit','SchoolController@update');
