@@ -15,6 +15,7 @@
 			</div>
 			<!-- The second colomn with Excell shit and photos-->
 			<div class="col-md-8">
+				@include('studio._excell_table')
 				
 			</div>
 			<!-- The third photo and other functionality-->
@@ -24,6 +25,7 @@
 		</div>
 		<!-- The third row with functionalities-->
 		<div class="row">
+				@include('studio._studio_tasks')
 		</div>
 	</div>
 @endsection
