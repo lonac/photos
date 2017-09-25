@@ -11,7 +11,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>S.7373</td>
+			<td>{{$school->center_number}}</td>
 			<td>0001</td>
 			<td>M</td>
 			<td>Stanley F. Swai</td>

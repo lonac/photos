@@ -14,7 +14,7 @@
                             <input type="text" class="form-control" placeholder="XS67563873UYB">
                         </div>
                         <div class="form-group">
-                            <a href="{{url('/studio')}}"  class="btn btn-success btn-lg btn-block">PROCEED</a>
+                            <a href="{{url('/schools')}}"  class="btn btn-success btn-lg btn-block">PROCEED</a>
                         </div>
                     </form>
                  </div>            
