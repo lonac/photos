@@ -33,3 +33,11 @@ Route::patch('schools/{id}/edit','SchoolController@update');
 //excell
 Route::get('schools/{id}/excell/create','ExcellController@create');
 Route::post('schools/{id}/excell/create','ExcellController@store');
+
+//item
+Route::get('importExport', 'MaatwebsiteDemoController@importExport');
+Route::get('downloadExcel/{type}', 'MaatwebsiteDemoController@downloadExcel');
+Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
+
+Route::get('items', 'ItemController@index');
+Route::post('items/import', 'ItemController@import');
