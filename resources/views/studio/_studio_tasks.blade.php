@@ -2,23 +2,36 @@
 	<center>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<a href="" class="btn btn-default btn-lg btn-block">UPLOAD EXCELL</a>
-				<input type="file" id="inputfile" name="excell">
+				<form action="" method="post" enctype="multipart/form-data">
+		              <div class="col-md-6">
+		                  <input type="file" name="imported-file"/>
+		              </div>
+		              <div class="col-md-6">
+		                  <button class="btn btn-primary btn-sm btn-block" type="submit">UPLOAD EXCELL</button>
+		              </div>
+		         </form>
 			</div>
 		</div>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<a href="" class="btn btn-default btn-lg btn-block">UPLOAD PHOTOS</a>
+				<form action="" method="post" enctype="multipart/form-data">
+		              <div class="col-md-6">
+		                  <input type="file" name="imported-file"/>
+		              </div>
+		              <div class="col-md-6">
+		                  <button class="btn btn-primary btn-sm btn-block" type="submit">UPLOAD PHOTOS</button>
+		              </div>
+		         </form>
 			</div>
 		</div>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<a href="" class="btn btn-default btn-lg btn-block">CREATE PDF</a>
+				<button class="btn btn-info btn-sm btn-block">CREATE PDF</button>
 			</div>
 		</div>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<a href="" class="btn btn-default btn-lg btn-block">CONVERT&RENAME</a>
+				<a href="" class="btn btn-warning btn-sm btn-block">CONVERT&RENAME</a>
 			</div>
 		</div>
 	</center>

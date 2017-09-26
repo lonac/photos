@@ -2,7 +2,6 @@
 	<table class="table table-hover">
 	<thead>
 		<tr>
-			<th>CENTRE NO</th>
 			<th>S/NO</th>
 			<th>SEX</th>
 			<th>NAME OF STUDENTS</th>
@@ -11,7 +10,6 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>{{$school->center_number}}</td>
 			<td></td><td></td><td></td>
 			<td>
 				<img src="{{asset('img/9.jpg')}}" width="20" height="15">

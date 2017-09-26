@@ -32,3 +32,4 @@ Route::patch('schools/{id}/edit','SchoolController@update');
 
 //excell
 Route::get('schools/{id}/excell/create','ExcellController@create');
+Route::post('schools/{id}/excell/create','ExcellController@store');

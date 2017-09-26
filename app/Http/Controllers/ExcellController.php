@@ -8,6 +8,8 @@ use App\School;
 
 use App\Excell;
 
+use Excel;
+
 class ExcellController extends Controller
 {
     /**
@@ -40,7 +42,36 @@ class ExcellController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         if($request->file('choosen-file'))
+      {
+                $path = $request->file('choosen-file')->getRealPath();
+                $data = Excel::load($path, function($reader)
+          {
+                })->get();
+
+          if(!empty($data) && $data->count())
+          {
+            foreach ($data->toArray() as $row)
+            {
+              if(!empty($row))
+              {
+                $dataArray[] =
+                [
+                  'id_no' => $row['SIGNATURE'],
+                  'firstname' => $row['FIRST NAME'],
+                  'middlename' => $row['MIDDLE NAME'],
+                  'surname' => $row['SURNAME'],
+                  'sex' => $row['SEX'],
+                ];
+              }
+          }
+          if(!empty($dataArray))
+          {
+             Excell::insert($dataArray);
+             return back();
+           }
+         }
+       }
     }
 
     /**
