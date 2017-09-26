@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Excell extends Model
 {
-    protected $fillable=['id_no','firstname','middlename','surname','sex',];
+    protected $fillable=['id-no','school_id','firstname','middlename','surname','sex',];
 
     public function schools()
     {

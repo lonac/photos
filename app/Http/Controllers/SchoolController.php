@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\School;
 
+use Excel;
+
+use App\Excell;
+
 class SchoolController extends Controller
 {
     /**
@@ -61,7 +65,9 @@ class SchoolController extends Controller
     {
         $school = School::findOrFail($id);
 
-        return view('schools.show',compact('school'));
+        $excel = Excell::where('school_id', $school->id)->get();
+
+        return view('schools.show',compact('school','excel'));
     }
 
     /**
@@ -99,4 +105,32 @@ class SchoolController extends Controller
     {
         //
     }
+
+    public function ImportSheetToDB(Request $request, $id)
+    {
+        $school = School::findOrFail($id);
+
+        if($request->hasFile('imported-file')){
+            $path = $request->file('imported-file')->getRealPath();
+            $data = \Excel::load($path)->get();
+            if($data->count()){
+                foreach ($data as $key => $value) {
+                    $arr[] = [
+                    'school_id'=>School::findOrFail($id)->id,
+                    'idno'=> $value->idno,
+                    'firstname' => $value->firstname, 
+                    'middlename' => $value->middlename,
+                    'surname'=> $value->surname,
+                     'sex'=> $value->sex
+                     ];
+                }
+                if(!empty($arr)){
+                    \DB::table('excells')->insert($arr);
+                    
+                    return redirect('schools/'.$school->id)->with('status','Data Were Successfully Uploaded');
+                }
+            }
+        }
+        dd('Request data does not have any files to import.');    
+}
 }

@@ -2,7 +2,8 @@
 	<center>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<form action="" method="post" enctype="multipart/form-data">
+				<form action="{{url('schools/'.$school->id)}}" method="post" enctype="multipart/form-data">
+					{{ csrf_field() }}
 		              <div class="col-md-6">
 		                  <input type="file" name="imported-file"/>
 		              </div>
@@ -14,8 +15,10 @@
 		</div>
 		<div class="col-md-3">
 			<div class="panel-heading">
-				<form action="" method="post" enctype="multipart/form-data">
+				<form action="{{url('schools/'.$school->id)}}" method="post" enctype="multipart/form-data">
+					{{ csrf_field() }}
 		              <div class="col-md-6">
+
 		                  <input type="file" name="imported-file"/>
 		              </div>
 		              <div class="col-md-6">

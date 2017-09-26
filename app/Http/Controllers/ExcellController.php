@@ -40,39 +40,33 @@ class ExcellController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-         if($request->file('choosen-file'))
-      {
-                $path = $request->file('choosen-file')->getRealPath();
-                $data = Excel::load($path, function($reader)
-          {
-                })->get();
+        $school = School::findOrFail($id);
 
-          if(!empty($data) && $data->count())
-          {
-            foreach ($data->toArray() as $row)
-            {
-              if(!empty($row))
-              {
-                $dataArray[] =
-                [
-                  'id_no' => $row['SIGNATURE'],
-                  'firstname' => $row['FIRST NAME'],
-                  'middlename' => $row['MIDDLE NAME'],
-                  'surname' => $row['SURNAME'],
-                  'sex' => $row['SEX'],
-                ];
-              }
-          }
-          if(!empty($dataArray))
-          {
-             Excell::insert($dataArray);
-             return back();
-           }
-         }
-       }
-    }
+        if($request->hasFile('choosen-file')){
+            $path = $request->file('choosen-file')->getRealPath();
+            $data = \Excel::load($path)->get();
+            if($data->count()){
+                foreach ($data as $key => $value) {
+                    $arr[] = [
+                    'school_id'=>School::findOrFail($id)->id,
+                    'idno'=> $value->idno,
+                    'firstname' => $value->firstname, 
+                    'middlename' => $value->middlename,
+                    'surname'=> $value->surname,
+                     'sex'=> $value->sex
+                     ];
+                }
+                if(!empty($arr)){
+                    \DB::table('excells')->insert($arr);
+                    dd('Insert Record successfully.');
+                }
+            }
+        }
+        dd('Request data does not have any files to import.');    
+}
+     
 
     /**
      * Display the specified resource.

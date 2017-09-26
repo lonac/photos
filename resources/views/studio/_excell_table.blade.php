@@ -8,13 +8,20 @@
 			<th>PHOTO</th>
 		</tr>
 	</thead>
+	@if($excel->count()>0)
+				@foreach($excel as $data)
 	<tbody>
 		<tr>
-			<td></td><td></td><td></td>
-			<td>
-				<img src="{{asset('img/9.jpg')}}" width="20" height="15">
-			</td>
+			
+				<td>{{$data->idno}}</td>
+				<td>{{$data->sex}}</td>
+					<td>{{$data->firstname}}</td>
+				<td></td>
+			
+			
 		</tr>
 	</tbody>
+		@endforeach
+			@endif
 	</table>
 </div>

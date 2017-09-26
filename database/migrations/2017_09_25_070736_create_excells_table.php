@@ -15,9 +15,9 @@ class CreateExcellsTable extends Migration
     {
         Schema::create('excells', function (Blueprint $table) {
             $table->increments('id');
-            //$table->integer('school_id')->unsigned();
-            //$table->foreign('school_id')->references('id')->on('schools')->onUpdate('cascade');
-            $table->string('id_no');
+            $table->integer('school_id')->unsigned();
+            $table->foreign('school_id')->references('id')->on('schools')->onUpdate('cascade');
+            $table->text('idno');
             $table->string('firstname');
             $table->string('middlename');
             $table->string('surname');

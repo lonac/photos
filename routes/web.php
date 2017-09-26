@@ -26,6 +26,7 @@ Route::get('schools','SchoolController@index');
 Route::get('schools/create','SchoolController@create');
 Route::post('schools/create','SchoolController@store');
 Route::get('schools/{id}','SchoolController@show');
+Route::post('schools/{id}','SchoolController@ImportSheetToDB');
 Route::get('schools/{id}/edit','SchoolController@edit');
 Route::patch('schools/{id}/edit','SchoolController@update');
 
@@ -41,3 +42,11 @@ Route::post('importExcel', 'MaatwebsiteDemoController@importExcel');
 
 Route::get('items', 'ItemController@index');
 Route::post('items/import', 'ItemController@import');
+
+Route::get('import-export-csv-excel',array('as'=>'excel.import','uses'=>'FileController@importExportExcelORCSV'));
+Route::post('import-csv-excel',array('as'=>'import-csv-excel','uses'=>'FileController@importFileIntoDB'));
+Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'FileController@downloadExcelFile'));
+
+Route::get('school-sheet',array('as'=>'excel.import','uses'=>'SheetController@getSheet'));
+Route::post('school-sheet',array('as'=>'import-csv-excel','uses'=>'SheetController@importToDB'));
+Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'SheetController@downloadExcelSheet'));
