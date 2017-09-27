@@ -114,9 +114,10 @@ class SchoolController extends Controller
             $path = $request->file('imported-file')->getRealPath();
 
             $data = \Excel::load($path)->
-            select(array('firstname', 'lastname','idno','middlename','sex','surname'))->get();
+            select(array('firstname', 'lastname','idno','middlename','sex','surname'))
+            ->ignoreEmpty(true)->get();
 
-            
+
             if($data->count()){
                 foreach ($data as $key => $value) {
                     $arr[] = [

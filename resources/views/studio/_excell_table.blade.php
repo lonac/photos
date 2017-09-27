@@ -9,6 +9,7 @@
 			<th>MIDDLENAME</th>
 			<th>SURNAME</th>
 			<th>PHOTO</th>
+			<th>Action</th>
 		</tr>
 	</thead>
 		@if($excel->count()>0)
@@ -22,6 +23,7 @@
 					<td>{{$data->middlename}}</td>	
 					<td>{{$data->surname }}</td>		
 					<td></td>
+					<td><a href=""><strong>Edit</strong></a></td>
 				</tr>
 			</tbody>
 			@endforeach
