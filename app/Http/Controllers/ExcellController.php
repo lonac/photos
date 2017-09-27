@@ -50,7 +50,7 @@ class ExcellController extends Controller
             if($data->count()){
                 foreach ($data as $key => $value) {
                     $arr[] = [
-                    'school_id'=>School::findOrFail($id)->id,
+                    'school_id'=>School::findOrFail($id)->id
                     'idno'=> $value->idno,
                     'firstname' => $value->firstname, 
                     'middlename' => $value->middlename,

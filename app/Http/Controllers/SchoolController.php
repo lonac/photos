@@ -112,7 +112,11 @@ class SchoolController extends Controller
 
         if($request->hasFile('imported-file')){
             $path = $request->file('imported-file')->getRealPath();
-            $data = \Excel::load($path)->get();
+
+            $data = \Excel::load($path)->
+            select(array('firstname', 'lastname','idno','middlename','sex','surname'))->get();
+
+            
             if($data->count()){
                 foreach ($data as $key => $value) {
                     $arr[] = [
@@ -131,6 +135,6 @@ class SchoolController extends Controller
                 }
             }
         }
-        dd('Request data does not have any files to import.');    
+        return redirect('schools/'.$school->id)->with('status','Request data does not have any files to import.');  
 }
 }

@@ -17,7 +17,7 @@ class CreateExcellsTable extends Migration
             $table->increments('id');
             $table->integer('school_id')->unsigned();
             $table->foreign('school_id')->references('id')->on('schools')->onUpdate('cascade');
-            $table->text('idno');
+            $table->text('idno')->unique();
             $table->string('firstname');
             $table->string('middlename');
             $table->string('surname');
