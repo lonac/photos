@@ -108,23 +108,24 @@ class SchoolController extends Controller
 
     public function ImportSheetToDB(Request $request, $id)
     {
+ 
         $school = School::findOrFail($id);
 
         if($request->hasFile('imported-file')){
             $path = $request->file('imported-file')->getRealPath();
 
             $data = \Excel::load($path)->
-            select(array('firstname', 'lastname','idno','middlename','sex','surname'))
+            select(array('FIRST NAME', 'lastname','idno','middlename','sex','surname'))
             ->skipRows(1)->takeRows(36)->get();
 
 
 
             if($data->count()){
-                foreach ($data as $key => $value) {
+                foreach ($data->toArray() as $key => $value) {
                     $arr[] = [
                     'school_id'=>School::findOrFail($id)->id,
-                    'idno'=> $value->idno,
-                    'firstname' => $value->firstname, 
+                    'idno'=> $value['idno'],
+                    +'firstname' => $value['FIRST NAME'], 
                     'middlename' => $value->middlename,
                     'surname'=> $value->surname,
                      'sex'=> $value->sex
@@ -137,6 +138,8 @@ class SchoolController extends Controller
                 }
             }
         }
-        return redirect('schools/'.$school->id)->with('status','Request data does not have any files to import.');  
+        return redirect('schools/'.$school->id)->with('status','No Data selected to be Uploaded');  
 }
+
+       
 }

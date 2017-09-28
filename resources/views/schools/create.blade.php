@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<div class="panel panel-default">
+				<div class="panel panel-primary">
 					<div class="panel-heading"><h2>School Details</h2></div>
 					<div class="panel-body">
 						<form method="POST" action="{{ url('schools/create') }}">
@@ -14,15 +14,11 @@
 
 								 <div class="form-group">
 		                            <label for="name" class="col-md-4 control-label">School Name</label>
-		                            <div class="col-md-6">
 		                                <input id="name" type="text" class="form-control" name="name" required autofocus>
-		                        	</div>
 								</div>
 								<div class="form-group">
 		                            <label for="center_number" class="col-md-4 control-label">Center Number</label>
-		                            <div class="col-md-6">
 		                                <input id="center_number" type="text" class="form-control" name="center_number">
-		                        	</div>
 								</div>
 								
 								<div class="form-group">

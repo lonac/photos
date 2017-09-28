@@ -12,4 +12,9 @@ class Excell extends Model
     {
     	return $this->belongsTo('App\School','school_id');
     }
+
+    public function students()
+    {
+    	return $this->hasOne('App\Student');
+    }
 }

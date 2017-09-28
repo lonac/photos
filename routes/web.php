@@ -31,9 +31,14 @@ Route::get('schools/{id}/edit','SchoolController@edit');
 Route::patch('schools/{id}/edit','SchoolController@update');
 
 
+
 //excell
 Route::get('schools/{id}/excell/create','ExcellController@create');
 Route::post('schools/{id}/excell/create','ExcellController@store');
+
+//student
+Route::get('schools/{id}/students/{student_id}','StudentController@editstudent');
+Route::post('schools/{id}/excell/create','StudentController@store');
 
 //item
 Route::get('importExport', 'MaatwebsiteDemoController@importExport');

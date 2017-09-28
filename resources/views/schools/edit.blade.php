@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
-					<div class="panel-heading"><h2>School Details</h2></div>
+					<div class="panel-heading"><h1>School Details</h1></div>
 					<div class="panel-body">
 						<form method="POST" action="{{ url('schools/'.$school->id.'/edit') }}">
 								{{ csrf_field() }}

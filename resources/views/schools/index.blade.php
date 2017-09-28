@@ -11,11 +11,14 @@
 				</div>
 			@endif
 			<div class="col-md-8 col-md-offset-2">
-				<div class="panel panel-default">
-					<div class="panel-heading"><h1>LIST OF SCHOOLS</h1></div>
+				<div class="panel panel-primary">
+					<div class="panel-heading"><center><h1>LIST OF SCHOOLS
+						<a href="{{url('schools/create')}}" class="btn btn-success">ADD SCHOOL?</a>
+					</h1></center></div>
 					<div class="panel-body">
 						<div class="table">
 							<table class="table table-hover">
+								<thead></thead>
 								<tbody>
 									<tr>
 										<td>

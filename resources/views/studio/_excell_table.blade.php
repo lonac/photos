@@ -23,7 +23,7 @@
 					<td>{{$data->middlename}}</td>	
 					<td>{{$data->surname }}</td>		
 					<td></td>
-					<td><a href=""><strong>Edit</strong></a></td>
+					<td><a href="{{url('schools/'.$data->school_id.'/students/'.$data->idno)}}"><strong>Edit</strong></a></td>
 				</tr>
 			</tbody>
 			@endforeach

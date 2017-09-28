@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
-                <div class="panel-heading"><center><h2>Photo Magic Studio</h2></center></div>
+                <div class="panel-heading"><center><h1>Photo Magic Studio</h1></center></div>
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
