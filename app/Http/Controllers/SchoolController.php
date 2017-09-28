@@ -115,7 +115,8 @@ class SchoolController extends Controller
 
             $data = \Excel::load($path)->
             select(array('firstname', 'lastname','idno','middlename','sex','surname'))
-            ->skipRows(1)->get();
+            ->skipRows(1)->takeRows(36)->get();
+
 
 
             if($data->count()){
