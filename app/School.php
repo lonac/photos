@@ -12,4 +12,9 @@ class School extends Model
     {
     	return $this->hasOne('App\Excell');
     }
+
+    public function pictures()
+    {
+    	return $this->hasOne('App\Picture');
+    }
 }

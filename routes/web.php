@@ -55,3 +55,7 @@ Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'FileC
 Route::get('school-sheet',array('as'=>'excel.import','uses'=>'SheetController@getSheet'));
 Route::post('school-sheet',array('as'=>'import-csv-excel','uses'=>'SheetController@importToDB'));
 Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'SheetController@downloadExcelSheet'));
+
+
+//Picture Upload
+Route::post('schools/{id}/pictures/Upload','PictureController@UploadImage');
