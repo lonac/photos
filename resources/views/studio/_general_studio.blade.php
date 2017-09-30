@@ -9,7 +9,7 @@
 		@include('studio._image_properties')
 	</div>
 	<!-- The second colomn with Excell shit and photos-->
-	<div class="col-md-8">
+	<div class="col-md-10">
 		@include('studio._excell_table')
 		
 	</div>

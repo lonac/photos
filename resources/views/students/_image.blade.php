@@ -5,13 +5,10 @@
 			<img src="{{asset('/'.$school->id.'/pictures/'.$student->idno.'.jpg')}}">
 		</div>
 		<div class="form-group">
-			<a href="" class="btn btn-info btn-sm btn-block">EDIT</a>
+			<a href="" class="btn btn-success btn-sm btn-block">CHANGE</a>
 		</div>
 		<div class="form-group">
 			<a href="" class="btn btn-danger btn-sm btn-block">DELETE</a>
-		</div>
-		<div class="form-group">
-			<a href="" class="btn btn-warning btn-sm btn-block">ADD</a>
 		</div>
 	</div>
 </div>
