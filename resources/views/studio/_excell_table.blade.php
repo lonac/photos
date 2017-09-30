@@ -22,7 +22,7 @@
 					<td>{{$data->firstname}}</td>
 					<td>{{$data->middlename}}</td>	
 					<td>{{$data->surname }}</td>		
-					<td></td>
+					<td><img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.jpg')}}" width="20" height="20"></td>
 					<td><a href="{{url('schools/'.$data->school_id.'/students/'.$data->idno)}}"><strong>Edit</strong></a></td>
 				</tr>
 			</tbody>

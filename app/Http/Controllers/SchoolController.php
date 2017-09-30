@@ -117,17 +117,17 @@ class SchoolController extends Controller
             $path = $request->file('imported-file')->getRealPath();
 
             $data = \Excel::load($path)->
-            select(array('FIRST NAME', 'lastname','idno','middlename','sex','surname'))
+            select(array('firstname', 'lastname','idno','middlename','sex','surname'))
             ->skipRows(1)->takeRows(36)->get();
 
 
 
             if($data->count()){
-                foreach ($data->toArray() as $key => $value) {
+                foreach ($data as $key => $value) {
                     $arr[] = [
                     'school_id'=>School::findOrFail($id)->id,
-                    'idno'=> $value['idno'],
-                    +'firstname' => $value['FIRST NAME'], 
+                    'idno'=> $value->idno,
+                    'firstname' => $value->firstname, 
                     'middlename' => $value->middlename,
                     'surname'=> $value->surname,
                      'sex'=> $value->sex

@@ -14,9 +14,6 @@
 		
 	</div>
 	<!-- The third photo and other functionality-->
-	<div class="col-md-2">
-		@include('studio._myphoto')
-	</div>
 </div>
 <!-- The third row with functionalities-->
 <div class="row">

@@ -14,6 +14,8 @@ use App\School;
 
 use App\Picture;
 
+use App\Excell;
+
 class PictureController extends Controller
 {
     /**
@@ -42,31 +44,26 @@ class PictureController extends Controller
         //get_image original name
         $imgname = $image->getClientOriginalName();
 
+        //give image name as its ID
+
         //get the image to intenvention manipulation
 
         $get_img = Image::make($image);
 
+        //create  image pathc
+        $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
+
         //resize to 
-        $img = $get_img->resize(132,185);
+        $img = $get_img->resize(132,185)->save($image_path);
 
-        //get the file name 
-        $name = md5($image->getFilename().time()).'.'.$image->getClientOriginalExtension();
-
-        //save image public
-        $request->file('image')->move(
-        base_path() . '/public/'.$school->id.'/pictures/', $imgname );
-
-        $image_path = base_path().'/public/'.$school->id.'/pictures';
-
+        //get the file name  
         $schoolpicture = new SchoolPhoto;
         $schoolpicture->school_id = $school->id;
         $schoolpicture->image = $image_path;
 
         $schoolpicture->save();
 
-        return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');
-
-
+         return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
 
       } 
 

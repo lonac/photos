@@ -48,7 +48,13 @@
 				</div>
 			</div>
 
+
+		<div class="col-md-2 col-md-offset-0">
+			@include('students._image')
 		</div>
+
+		</div>
+
 
 	</div>
 

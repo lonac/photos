@@ -8,6 +8,8 @@ use App\School;
 
 use App\Excell;
 
+use App\SchoolPhoto;
+
 use App\Student;
 
 class StudentController extends Controller
@@ -67,9 +69,11 @@ class StudentController extends Controller
             //school excell
             $student = Excell::findOrFail($student_id);
 
+            $photo = $school->school_photos;
+
             //$student = Excell::where('idno', $studentid)->get();
 
-            return view('students.editstudent',compact('school','student'));
+            return view('students.editstudent',compact('school','student','photo'));
 
         }
 

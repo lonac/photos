@@ -13,8 +13,5 @@ class SchoolPhoto extends Model
     	return $this->belongsTo('App\School');
     }
 
-    public function excells()
-    {
-    	return $this->belongsTo('App\Excell');
-    }
+    
 }
