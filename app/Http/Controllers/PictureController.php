@@ -36,6 +36,12 @@ class PictureController extends Controller
     
     public function UploadImage(Request $request, $id)
     {
+       /* Multi valodation
+        foreach ($request->image as $image) {
+            $this->validate($request,[
+                'image' => 'mimes:jpeg|required|max:4000'
+                ]);
+        }  */
 
         $school = School::findOrFail($id);
 
