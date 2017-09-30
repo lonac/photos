@@ -17,4 +17,9 @@ class Excell extends Model
     {
     	return $this->hasOne('App\Student');
     }
+
+    public function school_photos()
+    {
+    	return $this->hasOne('App\SchoolPhoto');
+    }
 }

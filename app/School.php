@@ -13,8 +13,8 @@ class School extends Model
     	return $this->hasOne('App\Excell');
     }
 
-    public function pictures()
+    public function school_photos()
     {
-    	return $this->hasOne('App\Picture');
+    	return $this->hasOne('App\SchoolPhoto');
     }
 }

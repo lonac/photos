@@ -18,7 +18,7 @@
 				<form action="{{url('schools/'.$school->id.'/pictures/Upload')}}" method="post" enctype="multipart/form-data">
 					{{ csrf_field() }}
 		              <div class="col-md-6">
-		                  <input type="file" name="filenames[]" multiple />
+		                  <input type="file" name="image" />
 		              </div>
 		              <div class="col-md-6">
 		                  <button class="btn btn-primary btn-sm btn-block" type="submit">UPLOAD PHOTOS</button>

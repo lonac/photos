@@ -67,7 +67,9 @@ class SchoolController extends Controller
 
         $excel = Excell::where('school_id', $school->id)->get();
 
-        return view('schools.show',compact('school','excel'));
+        $photos = $school->school_photos;
+
+        return view('schools.show',compact('school','excel','photos'));
     }
 
     /**
