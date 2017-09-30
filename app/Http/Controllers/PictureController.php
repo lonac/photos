@@ -36,39 +36,58 @@ class PictureController extends Controller
     
     public function UploadImage(Request $request, $id)
     {
-       
-        $this->validate($request,[
-        'image' => 'mimes:jpeg|required|max:500'
-            ]);
 
         $school = School::findOrFail($id);
 
         //get the image
         $image = $request->file('image');
 
-        //get_image original name
-        $imgname = $image->getClientOriginalName();
 
-        //give image name as its ID
+        //foreach image
+        if(!empty($image))
+        {
+            foreach ($image as $img)
+             {
+                $imgname = $img->getClientOriginalName();
+
+                $get_img = Image::make($img);
+
+                 $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
+
+                  $imeg = $get_img->resize(132,185)->save($image_path);
+
+                  $schoolpicture = new SchoolPhoto;
+
+                  $schoolpicture->school_id = $school->id;
+
+                  $schoolpicture->image = $image_path;
+
+                  $schoolpicture->save();
+            }
+             
+
+         return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
+        } 
+        else
+        {
+            $faile = "Failed to Upload";
+            dd($faile);
+        }
+        //get_image original name
+       
 
         //get the image to intenvention manipulation
 
-        $get_img = Image::make($image);
+        
 
         //create  image pathc
-        $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
+       
 
         //resize to 
-        $img = $get_img->resize(132,185)->save($image_path);
+       
 
         //get the file name  
-        $schoolpicture = new SchoolPhoto;
-        $schoolpicture->school_id = $school->id;
-        $schoolpicture->image = $image_path;
-
-        $schoolpicture->save();
-
-         return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
+       
 
       } 
 
