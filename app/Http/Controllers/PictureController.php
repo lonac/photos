@@ -58,9 +58,13 @@ class PictureController extends Controller
 
                 $get_img = Image::make($img);
 
-                 $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
+                // $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
 
-                  $imeg = $get_img->resize(132,185)->save($image_path);
+                $computer = base_path(). '/SizedPhoto';
+
+                  $imeg = $get_img->resize(132,185)->save($computer);
+
+                  
 
                   $schoolpicture = new SchoolPhoto;
 
@@ -68,32 +72,18 @@ class PictureController extends Controller
 
                   $schoolpicture->image = $image_path;
 
-                  $schoolpicture->save();
+                //  $schoolpicture->save();
             }
              
-
-         return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
+            $mess = "Save to Computer";
+            dd($mess);
+         //return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
         } 
         else
         {
             $faile = "Failed to Upload";
             dd($faile);
         }
-        //get_image original name
-       
-
-        //get the image to intenvention manipulation
-
-        
-
-        //create  image pathc
-       
-
-        //resize to 
-       
-
-        //get the file name  
-       
 
       } 
 
