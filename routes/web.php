@@ -38,6 +38,7 @@ Route::post('schools/{id}/excell/create','ExcellController@store');
 
 //student
 Route::get('schools/{id}/students/{student_id}','StudentController@editstudent');
+Route::patch('schools/{id}/students/{student_id}','StudentController@UpdateStudent');
 Route::post('schools/{id}/excell/create','StudentController@store');
 
 //item

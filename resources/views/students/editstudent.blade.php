@@ -12,7 +12,9 @@
 					</h2></div>
 					<div class="panel-body">
 						<form method="POST" action="{{ url('schools/'.$school->id.'/students/'.$student->idno) }}">
-								{{ csrf_field() }}
+								 {{csrf_field()}}
+
+                   				 {{method_field('patch')}}
 								 <div class="form-group">
 		                            <label for="firstname">First Name</label>
 		                                <input id="firstname" type="text" class="form-control" name="firstname" value="{{$student->firstname}}">

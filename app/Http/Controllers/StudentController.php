@@ -64,17 +64,17 @@ class StudentController extends Controller
      */
     public function editstudent($id, $student_id)
         {
+            //get the school
             $school = School::findOrFail($id);
 
-            //school excell
-            $student = Excell::findOrFail($student_id);
+           //get the excell school
+            $student = $school->excells;
 
-            $photo = $school->school_photos;
-
-            //$student = Excell::where('idno', $studentid)->get();
+            //get excell id
+        
 
             return view('students.editstudent',compact('school','student','photo'));
-
+           // dd($student);
         }
 
     /**
@@ -84,9 +84,17 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function UpdateStudent(Request $request, $id,$student_id)
     {
-        //
+        $school = School::findOrFail($id);
+
+      
+
+        dd($student);
+
+        //get the id where the school id is found
+
+        
     }
 
     /**

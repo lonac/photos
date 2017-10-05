@@ -58,21 +58,23 @@ class PictureController extends Controller
 
                 $get_img = Image::make($img);
 
-                // $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
+                 $image_path = base_path().'/public/'.$school->id.'/pictures/'.$imgname;
 
-                $computer = base_path(). '/SizedPhoto';
+               // $computer = base_path(). '/SizedPhoto';
 
-                  $imeg = $get_img->resize(132,185)->save($computer);
+                //RESIZE AND SAVE
+                  //$imeg = $get_img->resize(132,185)->save($image_path);
 
+                //SAVE WITHOUT RESIZE
+                  $imeg = $get_img->save($image_path);
                   
-
                   $schoolpicture = new SchoolPhoto;
 
                   $schoolpicture->school_id = $school->id;
 
                   $schoolpicture->image = $image_path;
 
-                //  $schoolpicture->save();
+                  $schoolpicture->save();
             }
              
             $mess = "Save to Computer";
