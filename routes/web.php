@@ -29,6 +29,8 @@ Route::get('schools/{id}','SchoolController@show');
 Route::post('schools/{id}','SchoolController@ImportSheetToDB');
 Route::get('schools/{id}/edit','SchoolController@edit');
 Route::patch('schools/{id}/edit','SchoolController@update');
+Route::get('schools/{id}/pdf','SchoolController@downloadPDF');
+Route::get('schools/{id}/pdf-form','SchoolController@getPdfView');
 
 
 

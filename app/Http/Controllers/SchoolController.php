@@ -8,6 +8,8 @@ use App\School;
 
 use Excel;
 
+use PDF;
+
 use App\Excell;
 
 class SchoolController extends Controller
@@ -142,6 +144,31 @@ class SchoolController extends Controller
         }
         return redirect('schools/'.$school->id)->with('status','No Data selected to be Uploaded');  
 }
+
+        public function downloadPDF($id){
+
+              $school = School::findOrFail($id);
+
+               $photos = $school->school_photos;
+
+                $excel = Excell::where('school_id', $school->id)->get();
+
+              $pdf = PDF::loadView('schools.pdf', compact('school','photos','excel'));
+
+              return $pdf->download('schools.pdf');
+
+            }
+
+            public function getPdfView($id)
+            {
+                 $school = School::findOrFail($id);
+
+        $excel = Excell::where('school_id', $school->id)->get();
+
+        $photos = $school->school_photos;
+
+        return view('schools.pdf-form',compact('school','excel','photos'));
+            }
 
        
 }
