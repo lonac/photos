@@ -1,4 +1,4 @@
-
+<html>
 		<div class="row">
 				@include('studio._school_properties')
 		</div>
@@ -8,7 +8,7 @@
 				@foreach($excel as $data)
 				<div class="col-md-2 col-md-offset-0">
 					<center>
-						<img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.jpg')}}" width="140" height="120"><br>
+						<img src="{{$data->school_id}}/pictures/{{$data->idno}}.jpg" width="140" height="120"><br>
 						{{$data->schools->center_number}}-{{$data->idno}}- {{$data->firstname}} {{$data->middlename}} {{$data->surname }} <br>
 						SEX: {{$data->sex}} <br>
 						................................... <br>
@@ -17,5 +17,6 @@
 				@endforeach
 			@endif
 		</div>
+</html>
 
 		

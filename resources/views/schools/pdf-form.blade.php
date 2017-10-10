@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','Add School')
+@section('title', $school->name)
 
 @section('content')
 	<div class="container">
@@ -11,9 +11,9 @@
 		<div class="row">
 		@if($excel->count()>0)
 			@foreach($excel as $data)
-			<div class="col-md-2 col-md-offset-0">
+			<div class="col-sm-2 col-sm-offset-0">
 				<center>
-					<img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.jpg')}}" width="140" height="120"><br>
+					<img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.jpg')}}" width="120" height="140">
 					{{$data->schools->center_number}}-{{$data->idno}}- {{$data->firstname}} {{$data->middlename}} {{$data->surname }} <br>
 					SEX: {{$data->sex}} <br>
 					................................... <br>
