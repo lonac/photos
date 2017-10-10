@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title','PDF VIEW')
+@section('title','Add School')
 
 @section('content')
 	<div class="container">
@@ -30,7 +30,6 @@
 				</center>
 			</div>
 		</div>
-
 	</div>
-
 @endsection
+
