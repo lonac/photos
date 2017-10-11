@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
+
+<div class="container">
 	<div class="row">
 		@include('studio._school_properties')
 	</div>
-	@if($excel->count()>0)
-		@foreach($excel as $data)
+	<div class="row">
 
-			<figure>
-					<img src="{{$data->school_id}}/pictures/{{$data->idno}}.jpg" width="140" height="120"><br>
-				<figcaption>
-					{{$data->schools->center_number}}-{{$data->idno}}- {{$data->firstname}} {{$data->middlename}} {{$data->surname }} <br>
-					SEX: {{$data->sex}} <br>
-					................................... <br>
-				</figcaption>
-			</figure>
-		</td>	
-		</tr>
-		@endforeach
-	@endif	
-</html>
+			@if($excel->count()>0)
+				@foreach($excel as $data)
+					<div class="col-xs-2">
+						<center>
+								<img src="{{$data->school_id}}/pictures/{{$data->idno}}.jpg" width="80" height="135"><br>
+							{{$data->schools->center_number}}-{{$data->idno}}- {{$data->firstname}} {{$data->middlename}} {{$data->surname }} <br>
+							SEX: {{$data->sex}} <br>
+							................................... <br>
+						</center>
+					</div>
+				@endforeach
+			@endif
+	</div>
+</div>
 
 
 

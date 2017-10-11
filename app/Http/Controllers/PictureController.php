@@ -76,10 +76,7 @@ class PictureController extends Controller
 
                   $schoolpicture->save();
             }
-             
-            $mess = "Save to Computer";
-            dd($mess);
-         //return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
+            return redirect('schools/'.$school->id)->with('status','Photo Successfully Uploaded');  
         } 
         else
         {
