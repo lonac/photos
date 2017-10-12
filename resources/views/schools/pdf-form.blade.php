@@ -11,9 +11,9 @@
 		<div class="row">
 		@if($excel->count()>0)
 			@foreach($excel as $data)
-			<div class="col-sm-2 col-sm-offset-0">
+			<div class="col-xs-2 col-xs-offset-0">
 				<center>
-					<img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.jpg')}}" width="120" height="140">
+					<img src="{{asset('/'.$data->school_id.'/pictures/'.$data->idno.'.JPG')}}" width="120" height="140">
 					{{$data->schools->center_number}}-{{$data->idno}}- {{$data->firstname}} {{$data->middlename}} {{$data->surname }} <br>
 					SEX: {{$data->sex}} <br>
 					................................... <br>
