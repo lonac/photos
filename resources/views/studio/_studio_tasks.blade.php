@@ -27,9 +27,9 @@
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="panel-heading">
-				<a href="{{url('schools/'.$school->id.'/pdf-form')}}" class="btn btn-info btn-sm btn-block">CREATE PDF</a
-			</div>
+		<div class="panel-heading">
+				<a href="{{url('schools/'.$school->id.'/pdf-form')}}" class="btn btn-info btn-sm btn-block">VIEW PDF</a
+		</div>
 		</div>
 		<div class="col-md-3">
 			<div class="panel-heading">
