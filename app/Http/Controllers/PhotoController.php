@@ -50,21 +50,22 @@ class PhotoController extends Controller
         //Save Images to the Public Folder
         foreach ($request->photos as $photo)
          {
-            $imageName = $school->id . '.' . 
-             $photo->getClientOriginalExtension();
+            //get the image  name
+            $imageName = $photo->getClientOriginalName();
+
+            //remove non numbers characters
+            $newname = preg_replace('~\D~', '', $imageName);
+
+                $newimagename = $newname . '.' . 
+                 $photo->getClientOriginalExtension();
 
                 $photo->move(
-                base_path() . '/public/school_photos/'.$school->center_number.'/', $imageName
+                base_path() . '/public/school_photos/'.$school->center_number.'/', $newimagename
                 );
          }
 
-        //save the Images Uploaded
-       // $imageName = $school->id . '.' . 
-            // $request->file('photos')->getClientOriginalExtension();
-
-        //$request->file('photos')->move(
-       // base_path() . '/public/school_photos/'.$school->center_number.'/', $imageName
-          //);
+       
+      
   
        /* //Store image directory to the database
         foreach ($request->photos as $photo) {
