@@ -67,14 +67,14 @@ class StudentController extends Controller
             //get the school
             $school = School::findOrFail($id);
 
-           //get the excell school
-            $student = $school->excells;
+            
+            $get_student = Excell::findOrFail($student_id);
 
-            //get excell id
-        
+           //get the excell school
+
+            $student = $school->excells()->where('idno', $get_student->id)->get();
 
             return view('students.editstudent',compact('school','student','photo'));
-           // dd($student);
         }
 
     /**
