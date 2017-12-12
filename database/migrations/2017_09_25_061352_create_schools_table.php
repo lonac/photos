@@ -17,6 +17,8 @@ class CreateSchoolsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('center_number')->unique();
+            $table->string('level');
+            $table->string('year');
             $table->timestamps();
         });
     }

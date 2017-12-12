@@ -62,3 +62,7 @@ Route::get('download-excel-file/{type}', array('as'=>'excel-file','uses'=>'Sheet
 
 //Picture Upload
 Route::post('schools/{id}/pictures/Upload','PictureController@UploadImage');
+
+//Photos
+Route::get('schools/{id}/school_photos/add','PhotoController@add');
+Route::post('schools/{id}/school_photos/add','PhotoController@UploadPhotos');

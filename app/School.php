@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class School extends Model
 {
-    protected $fillable = ['name','center_number',];
+    protected $fillable = ['name','center_number','year','level'];
 
     public function excells()
     {
@@ -15,6 +15,6 @@ class School extends Model
 
     public function school_photos()
     {
-    	return $this->hasOne('App\SchoolPhoto');
+    	return $this->hasMany('App\SchoolPhoto');
     }
 }

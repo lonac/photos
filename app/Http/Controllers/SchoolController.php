@@ -23,6 +23,8 @@ class SchoolController extends Controller
     {
         $schools = School::all();
 
+
+
         return view('schools.index',compact('schools'));
     }
 
@@ -47,11 +49,14 @@ class SchoolController extends Controller
         $this->validate($request,[
             'name'=>'required|max:100',
             'center_number'=>'required|max:100',
+            'year'=>'required|max:4',
             ]);
 
         $school = new School;
         $school->name = $request->input('name');
         $school->center_number = $request->input('center_number');
+        $school->level = $request->input('level');
+        $school->year = $request->input('year');
         $school->save();
 
         return redirect('schools')->with('status','School Successfully Added');
@@ -71,7 +76,18 @@ class SchoolController extends Controller
 
         $photos = $school->school_photos;
 
-        return view('schools.show',compact('school','excel','photos'));
+        //Check if the school has photos uploade
+        if (!empty($photos)) {
+            
+            return redirect('schools/'.$school->id.'/school_photos/add');
+        } 
+        else
+         {
+           
+           return view('schools.show',compact('school','excel','photos'));
+        }
+
+
     }
 
     /**

@@ -17,7 +17,7 @@ class SchoolPhoto extends Migration
             $table->increments('id');
             $table->integer('school_id')->unsigned();
             $table->foreign('school_id')->references('id')->on('schools')->onUpdate('cascade');
-            $table->string('image');
+            $table->string('filename');
             $table->timestamps();
         });
     }

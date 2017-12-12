@@ -4,6 +4,14 @@
 
 @section('content')
 	<div class="container">
+
+		
+		
+
+		
+
+		{{--
+
 		@if(session('status'))
 			<div class="alert alert-success">
 				{{session('status')}}
@@ -12,8 +20,10 @@
 		@if($school!==null)
 			@include('studio._general_studio')
 		@else
-		 No School
+			 No School
 		@endif
+
+		--}}
 	</div>
 
 @endsection

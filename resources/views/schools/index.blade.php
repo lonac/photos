@@ -24,7 +24,9 @@
 										<td>
 											@if($schools!==null)
 												@foreach($schools as $school)
-													<h1><a href="{{url('schools/'.$school->id)}}">{{$school->name}}</a></h1>
+													<h1><a href="{{url('schools/'.$school->id)}}">{{$school->name}}</a>
+														<a href="{{url('schools/'.$school->id.'/edit')}}" class="btn btn-warning">EDIT</a>
+													</h1>
 												@endforeach
 											@else
 												add school

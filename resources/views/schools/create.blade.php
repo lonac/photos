@@ -20,6 +20,20 @@
 		                            <label for="center_number" class="col-md-4 control-label">Center Number</label>
 		                                <input id="center_number" type="text" class="form-control" name="center_number">
 								</div>
+
+								<div class="form-group">
+		                            <label for="level" class="col-md-4 control-label">Level(Form)</label>
+									 <select class="form-control" name="level">
+                                        <option value="I"> I</option>
+                                         <option value="II"> II</option>
+                                         <option value="IV"> IV</option>
+                                      </select>								
+                                 </div>
+
+								<div class="form-group">
+		                            <label for="year" class="col-md-4 control-label">Year</label>
+		                                <input id="year" type="number" class="form-control" name="year">
+								</div>
 								
 								<div class="form-group">
 		                
