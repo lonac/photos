@@ -1,0 +1,23 @@
+.service-color{
+	background-color:whitesmoke;
+}
+.service-text-color{
+	color: dimgray;
+}
+
+.team-background{
+	background-image: url('../img/team-background.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.header-image{
+    background-image: url(../img/header-image.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    padding: 25px;
+
+}
