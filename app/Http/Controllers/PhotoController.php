@@ -97,9 +97,13 @@ class PhotoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $photo)
     {
-        //
+        $school = School::findOrFail($id);
+
+        $filename = $school->school_photos;
+
+        return view('school_photos.edit',compact('school','filename'));
     }
 
     /**
