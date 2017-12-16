@@ -46,37 +46,32 @@ class PhotoController extends Controller
 
         $school = School::findOrFail($id);
 
-
-        //Save Images to the Public Folder
-        foreach ($request->photos as $photo)
-         {
-            //get the image  name
+        //Store image directory to the database
+        foreach ($request->photos as $photo) {
             $imageName = $photo->getClientOriginalName();
 
             //remove non numbers characters
-            $newname = preg_replace('~\D~', '', $imageName);
+             $newname = preg_replace('~\D~', '', $imageName);
 
-                $newimagename = $newname . '.' . 
-                 $photo->getClientOriginalExtension();
+            $newimagename = $newname . '.' ."jpg";
+            
 
-                $photo->move(
+
+            //save image ImageData to DB
+         //   $newimagename = $photo->store('school_photos/'.$school->center_number.'/', $newimagename );
+            SchoolPhoto::create([
+                'school_id' => $school->id,
+                'filename' => $newname
+            ]);
+
+
+        //Save the Image to Public Folder
+             $photo->move(
                 base_path() . '/public/school_photos/'.$school->center_number.'/', $newimagename
                 );
          }
 
-       
-      
-  
-       /* //Store image directory to the database
-        foreach ($request->photos as $photo) {
-            $filename = $photo->store('photos');
-            SchoolPhoto::create([
-                'school_id' => $school->id,
-                'filename' => $filename
-            ]);
-         }
 
-         */
 
 }
         
@@ -89,7 +84,11 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        //
+        $school = School::findOrFail($id);
+
+        $school_photos = $school->school_photos;
+
+        return view('school_photos.show',compact('school','school_photos'));
     }
 
     /**

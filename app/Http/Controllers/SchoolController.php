@@ -77,7 +77,7 @@ class SchoolController extends Controller
         $photos = $school->school_photos;
 
         //Check if the school has photos uploade
-        if (!empty($photos)) {
+        if (empty($photos)) {
             
             return redirect('schools/'.$school->id.'/school_photos/add');
         } 

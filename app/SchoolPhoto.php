@@ -10,6 +10,6 @@ class SchoolPhoto extends Model
 
     public function schools()
     {
-    	return $this->belongsTo('App\School');
+    	return $this->belongsTo('App\School','school_id');
     }   
 }
